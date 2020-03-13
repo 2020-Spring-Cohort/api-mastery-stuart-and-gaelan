@@ -1,0 +1,57 @@
+.container{
+    display: grid;
+    height: 99vh;
+    width: 99vw;
+    grid-template-columns: 5% 1fr 1fr 1fr 5%;
+    grid-template-rows: 10% 3% 1fr 5%;
+    margin: 0px;
+}
+
+.header{
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    text-align: center;
+    padding-bottom: 0px;
+}
+
+.countries{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    text-align: center;
+}
+
+.cities{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    text-align: center;
+}
+
+.attractions{
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    text-align: center;
+}
+
+.body{
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    padding-top: 50px;
+
+}
+
+.footer{
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
