@@ -16,6 +16,9 @@ public class Country {
      @OneToMany(mappedBy= "country")
      private Collection<City> cities;
 
+    @OneToMany(mappedBy = "country")
+    private Collection<Attraction> attractions;
+
      public Country(String name){
          this.name = name;
      }
@@ -32,6 +35,10 @@ public class Country {
 
     public Collection <City> getCities() {
          return cities;
+    }
+
+    public Collection<Attraction> getAttractions(){
+         return attractions;
     }
 
     @Override

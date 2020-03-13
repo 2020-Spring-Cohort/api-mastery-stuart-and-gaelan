@@ -1,9 +1,7 @@
 package org.wcci.apimastery;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class City {
@@ -15,6 +13,9 @@ public class City {
 
     @ManyToOne
     private Country country;
+
+    @OneToMany(mappedBy = "city")
+    private Collection<Attraction> attractions;
 
     public City(String name, Country country){
         this.name = name;
@@ -53,5 +54,9 @@ public class City {
         result = 31 * result + (id != null ? id.hashCode() : 0);
         result = 31 * result + (country != null ? country.hashCode() : 0);
         return result;
+    }
+
+    public Collection<Attraction> getAttractions() {
+        return attractions;
     }
 }
