@@ -4,7 +4,6 @@
     width: 99vw;
     grid-template-columns: 5% 1fr 1fr 1fr 5%;
     grid-template-rows: 10% 3% 1fr 5%;
-    margin: 0px;
 }
 
 .header{
@@ -13,7 +12,10 @@
     grid-row-start: 1;
     grid-row-end: 2;
     text-align: center;
-    padding-bottom: 0px;
+}
+
+span{
+    padding: 10px;
 }
 
 .countries{
@@ -45,7 +47,7 @@
     grid-column-end: 5;
     grid-row-start: 3;
     grid-row-end: 4;
-    padding-top: 50px;
+    padding-top: 30px;
 
 }
 

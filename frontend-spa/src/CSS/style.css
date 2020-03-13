@@ -1,0 +1,18 @@
+html{
+    background-image: url("/src/Images/MistyMountains.jpg");
+    background-size: cover;
+    color: blanchedalmond;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.body{
+
+}
+
+a{
+    color: blanchedalmond;
+}
+
+a:visited{
+    color:blanchedalmond;
+}
