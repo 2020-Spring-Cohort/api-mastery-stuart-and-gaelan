@@ -60,4 +60,25 @@ public class JPAMappingTest {
         Attraction retrievedAttraction2 = attractionRepo.findById(otherTestAttraction.getId()).get();
         assertThat(retrievedCity.getAttractions()).contains(retrievedAttraction1, retrievedAttraction2);
     }
+
+    @Test
+    public void attractionsShouldHaveCountries(){
+        Country testNation = new Country("Test Germany");
+        countryRepo.save(testNation);
+
+        City testCity1 = new City("Test1", testNation);
+        cityRepo.save(testCity1);
+        Attraction testAttraction = new Attraction(testNation, testCity1, "FunZone");
+        attractionRepo.save(testAttraction);
+        Attraction otherTestAttraction = new Attraction(testNation, testCity1, "BadZone");
+        attractionRepo.save(otherTestAttraction);
+
+        entityManager.flush();
+        entityManager.clear();
+
+        Country retrievedCountry = countryRepo.findById(testNation.getId()).get();
+        Attraction retrievedAttraction1 = attractionRepo.findById(testAttraction.getId()).get();
+        Attraction retrievedAttraction2 = attractionRepo.findById(otherTestAttraction.getId()).get();
+        assertThat(retrievedCountry.getAttractions()).contains(retrievedAttraction1, retrievedAttraction2);
+    }
 }
