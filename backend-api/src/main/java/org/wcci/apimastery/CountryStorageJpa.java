@@ -6,9 +6,13 @@ import java.util.Collection;
 import java.util.Optional;
 
 @Service
-public class CountryJpa implements CountryStorage {
+public class CountryStorageJpa implements CountryStorage {
 
     private CountryRepository countryRepository;
+
+    public CountryStorageJpa(CountryRepository countryRepository){
+        this.countryRepository = countryRepository;
+    }
 
     @Override
     public Collection<Country> findAllCountries() {
