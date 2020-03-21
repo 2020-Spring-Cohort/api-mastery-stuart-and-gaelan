@@ -19,7 +19,6 @@ public class City {
     private Country country;
 
     @OneToMany(mappedBy = "city")
-    @JsonBackReference
     private Collection<Attraction> attractions;
 
     public City(String name, Country country){

@@ -37,4 +37,9 @@ public class CityStorageJpa implements CityStorage {
     public void store(City cityToStore) {
         cityRepository.save(cityToStore);
     }
+
+    @Override
+    public void delete(City cityToRemove) {
+
+    }
 }

@@ -11,4 +11,6 @@ public interface CountryStorage {
     Optional<Country> findCountryById(Long id);
 
     Optional<Country> findCountryByName(String name);
+
+    void deleteById(Long id);
 }
