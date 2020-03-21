@@ -12,11 +12,7 @@ public class Attraction {
     @ManyToOne
     private City city;
 
-    @ManyToOne
-    private Country country;
-
-    public Attraction(Country country, City city, String name){
-        this.country = country;
+    public Attraction(City city, String name){
         this.city = city;
         this.name = name;
     }
@@ -33,10 +29,6 @@ public class Attraction {
         return city;
     }
 
-    public Country getCountry() {
-        return country;
-    }
-
     public Attraction() {
     }
 
@@ -49,8 +41,7 @@ public class Attraction {
 
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (city != null ? !city.equals(that.city) : that.city != null) return false;
-        return country != null ? country.equals(that.country) : that.country == null;
+        return city != null ? city.equals(that.city) : that.city == null;
     }
 
     @Override
@@ -58,7 +49,6 @@ public class Attraction {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (city != null ? city.hashCode() : 0);
-        result = 31 * result + (country != null ? country.hashCode() : 0);
         return result;
     }
 }
