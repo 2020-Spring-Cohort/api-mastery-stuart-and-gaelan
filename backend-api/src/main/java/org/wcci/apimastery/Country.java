@@ -1,5 +1,7 @@
 package org.wcci.apimastery;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,6 +16,7 @@ public class Country {
      private Long id;
 
      @OneToMany(mappedBy= "country")
+     @JsonBackReference
      private Collection<City> cities;
 
      public Country(String name){
