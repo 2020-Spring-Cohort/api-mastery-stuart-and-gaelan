@@ -36,6 +36,6 @@ public class CountryStorageJpa implements CountryStorage {
 
     @Override
     public void deleteById(Long id) {
-        
+
     }
 }

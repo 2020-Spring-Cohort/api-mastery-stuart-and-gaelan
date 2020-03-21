@@ -9,11 +9,13 @@ public class CountryController {
     private CountryStorage countryStorage;
     private CountryRepository countryRepository;
     private CityStorage cityStorage;
+    private CityRepository cityRepository;
 
-    public CountryController(CountryStorage countryStorage, CountryRepository countryRepository, CityStorage cityStorage){
+    public CountryController(CountryStorage countryStorage, CountryRepository countryRepository, CityStorage cityStorage, CityRepository cityRepository){
         this.countryStorage = countryStorage;
         this.countryRepository = countryRepository;
         this.cityStorage = cityStorage;
+        this.cityRepository = cityRepository;
     }
 
     @GetMapping("/countries/")
@@ -39,5 +41,13 @@ public class CountryController {
     @PostMapping("/countries/")
     public Country createCountry(@RequestBody Country countryToAdd){
         return countryRepository.save(countryToAdd);
+    }
+
+    @PatchMapping("/countries/{id}/cities/")
+    public Country updateCountryCities(@PathVariable Long id, @RequestBody City requestBodyCity){
+        Country countryToPatch = countryRepository.findById(id).get();
+        City cityToAdd = new City(requestBodyCity.getName(), countryToPatch);
+        cityRepository.save(cityToAdd);
+        return countryRepository.save(countryToPatch);
     }
 }
