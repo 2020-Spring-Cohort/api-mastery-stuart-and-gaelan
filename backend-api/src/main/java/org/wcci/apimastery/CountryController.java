@@ -1,19 +1,18 @@
 package org.wcci.apimastery;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
 @RestController
 public class CountryController {
     private CountryStorage countryStorage;
+    private CountryRepository countryRepository;
     private CityStorage cityStorage;
 
-    public CountryController(CountryStorage countryStorage, CityStorage cityStorage){
+    public CountryController(CountryStorage countryStorage, CountryRepository countryRepository, CityStorage cityStorage){
         this.countryStorage = countryStorage;
+        this.countryRepository = countryRepository;
         this.cityStorage = cityStorage;
     }
 
@@ -35,5 +34,10 @@ public class CountryController {
             cityStorage.delete(cityToRemove);
         }
         countryStorage.deleteById(id);
+    }
+
+    @PostMapping("/countries/")
+    public Country createCountry(@RequestBody Country countryToAdd){
+        return countryRepository.save(countryToAdd);
     }
 }
