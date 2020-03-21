@@ -1,6 +1,7 @@
 package org.wcci.apimastery;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
@@ -20,5 +21,9 @@ public class CountryController {
         return (Collection<Country>) countryRepository.findAll();
     }
 
+    @GetMapping("/countries/{id}/")
+    public Country retrieveSingleCountry(@PathVariable Long id){
+        return countryRepository.findById(id).get();
+    }
 
 }
