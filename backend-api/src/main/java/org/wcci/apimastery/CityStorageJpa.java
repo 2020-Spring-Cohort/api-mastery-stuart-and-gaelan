@@ -43,4 +43,9 @@ public class CityStorageJpa implements CityStorage {
     public void deleteById(Long id) {
 
     }
+
+    @Override
+    public void delete(City cityToRemove) {
+
+    }
 }

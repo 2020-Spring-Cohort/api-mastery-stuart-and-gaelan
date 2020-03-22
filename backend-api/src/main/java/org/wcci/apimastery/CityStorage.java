@@ -15,4 +15,5 @@ public interface CityStorage {
     City store(City cityToStore);
 
     void deleteById(Long id);
+    
 }
