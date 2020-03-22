@@ -1,5 +1,6 @@
 package org.wcci.apimastery;
 
+import java.util.Collection;
 import java.util.Optional;
 
 public interface AttractionStorage {
@@ -10,5 +11,11 @@ public interface AttractionStorage {
 
     Optional<Attraction> findByCity(String cityName);
 
-    void store(Attraction attractionToStore);
+    Attraction store(Attraction attractionToStore);
+
+    void delete(Attraction attractionToRemove);
+
+    Collection<Attraction> findAll();
+
+    void deleteById(Long id);
 }
