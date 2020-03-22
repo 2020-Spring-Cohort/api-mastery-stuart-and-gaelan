@@ -2,6 +2,8 @@ package org.wcci.apimastery;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
+
 @RestController
 public class CityController {
     private CountryStorage countryStorage;
@@ -22,6 +24,11 @@ public class CityController {
     @GetMapping("/cities/{name}/")
     public City retrieveCityByName(@PathVariable String name) {
         return cityStorage.findByName(name).get();
+    }
+
+    @GetMapping("/cities/")
+    public Collection<City> retrieveAllCities(){
+        return cityStorage.findAllCities();
     }
 
     @DeleteMapping("/cities/{id}/")

@@ -29,8 +29,9 @@ public class AttractionStorageJpa implements AttractionStorage{
     }
 
     @Override
-    public void store(Attraction attractionToStore) {
+    public Attraction store(Attraction attractionToStore) {
         attractionRepository.save(attractionToStore);
+        return attractionToStore;
     }
 
     @Override
