@@ -2,6 +2,7 @@ package org.wcci.apimastery;
 
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.Optional;
 
 @Service
@@ -37,5 +38,15 @@ public class AttractionStorageJpa implements AttractionStorage{
     @Override
     public void delete(Attraction attractionToRemove) {
         attractionRepository.delete(attractionToRemove);
+    }
+
+    @Override
+    public Collection<Attraction> findAll() {
+        return null;
+    }
+
+    @Override
+    public void deleteById(Long id) {
+
     }
 }

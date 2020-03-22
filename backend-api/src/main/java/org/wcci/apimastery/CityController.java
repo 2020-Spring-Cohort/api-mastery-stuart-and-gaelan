@@ -41,7 +41,7 @@ public class CityController {
         cityStorage.deleteById(id);
     }
 
-    @PostMapping("/countries/")
+    @PostMapping("/cities/")
     public City createCity(@RequestBody City cityToAdd){
         return cityStorage.store(cityToAdd);
     }

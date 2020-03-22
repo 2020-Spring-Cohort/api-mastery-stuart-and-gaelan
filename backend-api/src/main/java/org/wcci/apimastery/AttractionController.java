@@ -33,8 +33,4 @@ public class AttractionController {
         return attractionStorage.store(attractionToAdd);
     }
 
-//    @PatchMapping("/attractions/{id}/")
-//    public Attraction updateAttraction(@PathVariable Long id){
-//        do we need this?  How would we patch an attraction?
-//    }
 }
