@@ -33,4 +33,9 @@ public class CountryStorageJpa implements CountryStorage {
     public Optional<Country> findCountryByName(String name) {
         return countryRepository.findByName(name);
     }
+
+    @Override
+    public void deleteById(Long id) {
+
+    }
 }

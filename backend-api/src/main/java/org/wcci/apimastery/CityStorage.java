@@ -13,4 +13,6 @@ public interface CityStorage {
     Optional<City> findCityByCountry(String countryName);
 
     void store(City cityToStore);
+
+    void delete(City cityToRemove);
 }
