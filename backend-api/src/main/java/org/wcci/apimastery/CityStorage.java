@@ -6,11 +6,14 @@ import java.util.Optional;
 public interface CityStorage {
     Collection<City> findAllCities();
 
-    Optional<City> findCityById(Long id);
+    Optional<City> findById(Long id);
 
-    Optional<City> findByCityName(String name);
+    Optional<City> findByName(String name);
 
-    Optional<City> findCityByCountry(String countryName);
+    Optional<City> findByCountry(String countryName);
 
-    void store(City cityToStore);
+    City store(City cityToStore);
+
+    void deleteById(Long id);
+    
 }

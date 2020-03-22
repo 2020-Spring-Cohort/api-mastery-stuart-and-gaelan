@@ -19,22 +19,33 @@ public class CityStorageJpa implements CityStorage {
     }
 
     @Override
-    public Optional<City> findCityById(Long id) {
-        return cityRepository.findById(id);
+    public Optional<City> findById(Long id) {
+        return Optional.empty();
     }
 
     @Override
-    public Optional<City> findByCityName(String name) {
-        return cityRepository.findByName(name);
+    public Optional<City> findByName(String name) {
+        return Optional.empty();
     }
 
     @Override
-    public Optional<City> findCityByCountry(String countryName) {
-        return cityRepository.findByCountryName(countryName);
+    public Optional<City> findByCountry(String countryName) {
+        return Optional.empty();
     }
 
     @Override
-    public void store(City cityToStore) {
+    public City store(City cityToStore) {
         cityRepository.save(cityToStore);
+        return cityToStore;
+    }
+
+    @Override
+    public void deleteById(Long id) {
+
+    }
+
+    @Override
+    public void delete(City cityToRemove) {
+
     }
 }

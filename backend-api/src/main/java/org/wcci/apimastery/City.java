@@ -1,5 +1,8 @@
 package org.wcci.apimastery;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Collection;
 
@@ -12,6 +15,7 @@ public class City {
     private Long id;
 
     @ManyToOne
+    @JsonBackReference
     private Country country;
 
     @OneToMany(mappedBy = "city")

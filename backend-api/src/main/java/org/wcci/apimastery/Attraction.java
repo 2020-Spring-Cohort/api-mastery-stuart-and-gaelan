@@ -1,5 +1,7 @@
 package org.wcci.apimastery;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,6 +12,7 @@ public class Attraction {
     private String name;
 
     @ManyToOne
+    @JsonBackReference
     private City city;
 
     public Attraction(City city, String name){
