@@ -32,4 +32,9 @@ public class AttractionStorageJpa implements AttractionStorage{
     public void store(Attraction attractionToStore) {
         attractionRepository.save(attractionToStore);
     }
+
+    @Override
+    public void delete(Attraction attractionToRemove) {
+        attractionRepository.delete(attractionToRemove);
+    }
 }

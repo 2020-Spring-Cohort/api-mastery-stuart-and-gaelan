@@ -11,4 +11,6 @@ public interface AttractionStorage {
     Optional<Attraction> findByCity(String cityName);
 
     void store(Attraction attractionToStore);
+
+    void delete(Attraction attractionToRemove);
 }
