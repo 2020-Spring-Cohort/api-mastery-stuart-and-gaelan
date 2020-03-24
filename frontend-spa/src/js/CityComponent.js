@@ -10,12 +10,14 @@ const renderCityView = (cityId) => {
         .then(city => createCityView(city))
         .then(cityView => cityElement.appendChild(cityView))
         .catch(err => console.error(err));
+        console.log("renderCityView")
 }
 
 const createCityView = (city) => {
     const cityView = document.createElement('section');
     appendCityName(city, cityView);
     appendReturnToCountryLink(city, cityView);
+    console.log("createCityView")
     return cityView;
 }
 
@@ -23,6 +25,7 @@ const appendCityName = (city, element) => {
     const cityName = document.createElement('h2');
     cityName.innerText = city.name;
     element.appendChild(cityName);
+    console.log("appendCityName")
 }
 
 const appendReturnToCountryLink = (city, element) => {
@@ -38,6 +41,7 @@ const appendReturnToCountryLink = (city, element) => {
             element.appendChild(countryLink);
         })
         .catch(err => console.error(err));
+        console.log("appendReturnToCountryLink")
 }
 
 export {

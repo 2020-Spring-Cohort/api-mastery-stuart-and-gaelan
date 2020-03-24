@@ -13,6 +13,7 @@ const appendCityList = (cities, element) => {
         cityList.appendChild(cityList);
     });
     element.appendChild(cityList);
+    console.log("appendCityList")
 }
 
 export {

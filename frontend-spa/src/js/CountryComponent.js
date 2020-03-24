@@ -9,11 +9,12 @@ import {
 const renderCountry = (countryId) => {
     const countryElement = document.querySelector('main');
     countryElement.innerHTML = '';
-    fetch(`http://localhost:8080/countries/${id}/`)
+    fetch(`http://localhost:8080/countries/${countryId}/`)
         .then(response => response.json())
-        .then(campus => createCountryView(country))
+        .then(country => createCountryView(country))
         .then(countryView => countryElement.appendChild(countryView))
         .catch(err => console.error(err));
+        console.log("renderCountry")
 }
 
 const createCountryView = (country) => {
@@ -21,6 +22,7 @@ const createCountryView = (country) => {
     appendCountryName(country, countryView);
     appendCityList(country.cities, countryView);
     appendReturnToCountriesLink(countryView);
+   console.log("createCountryView")
     return countryView;
 }
 
@@ -28,6 +30,7 @@ const appendCountryName = (country, element) => {
     const countryName = document.createElement('h2');
     countryName.innerText = country.name;
     element.appendChild(countryName);
+    console.log("appendCountryName")
 }
 
 const appendReturnToCountriesLink = (element) => {
@@ -38,6 +41,7 @@ const appendReturnToCountriesLink = (element) => {
         renderCountries();
     });
     element.appendChild(returnToCountriesLink);
+    console.log("appendReturntoCountriesLink")
 }
 
 export {

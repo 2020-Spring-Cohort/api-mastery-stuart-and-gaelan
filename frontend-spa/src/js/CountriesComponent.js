@@ -20,7 +20,9 @@ const renderCountries = () => {
             countriesElement.appendChild(countriesList);
         })
         .catch(err => console.error(err));
-    return countriesElement;
+    console.log("renderCountries")
+        return countriesElement;
+    
 }
 
 export {
